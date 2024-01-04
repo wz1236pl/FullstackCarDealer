@@ -8,8 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const navigation = [
-  { name: 'Dodaj Ogłoszenie', to: '/AddAnnouncement' },
-  { name: 'Ulubione', to: '/Favorite' },
+  { name: 'Dodaj ogłoszenie', to: '/AddAnnouncement' },
 ];
 
 const Header = () => {
@@ -29,6 +28,7 @@ const Header = () => {
     localStorage.removeItem('loggedInUserEmail');
     setIsLoggedIn(false);
     setLoggedInUserEmail('');
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const Header = () => {
           <div className="hidden lg:flex lg:gap-x-12">
           {isLoggedIn ? (
             navigation.map((item) => (
-              <Link key={item.name} to={item.to} className="text-sm font-semibold leading-6 text-slate-200">
+              <Link key={item.name} to={item.to} className="text-sm font-semibold leading-6 text-slate-200 hover:text-red-500">
                 {item.name}
               </Link>
             ))
@@ -73,19 +73,19 @@ const Header = () => {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             {isLoggedIn ? (
               <>
-                <Link to="/register" className="text-sm font-semibold leading-6 text-slate-200">
-                  Zarejestruj
+                <Link to="/register" className="text-sm font-semibold leading-6 pr-2 text-slate-200 hover:text-red-500">
+                  Zarejestruj nowego użytkowanika
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="text-sm font-semibold leading-6 text-slate-200 pr-2"
+                  className="text-sm font-semibold leading-6 text-slate-200 pr-2 hover:text-red-500"
                 >
                   Wyloguj
                 </button>
               </>
             ) : (
               <>
-                <Link to="/login" className="text-sm font-semibold leading-6 text-slate-200 pr-2">
+                <Link to="/login" className="text-sm font-semibold leading-6 text-slate-200 pr-2 hover:text-red-500">
                   Zaloguj
                 </Link>
                 

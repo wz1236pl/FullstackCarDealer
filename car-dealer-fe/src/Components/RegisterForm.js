@@ -41,10 +41,10 @@ export default function Example() {
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <input type="hidden" name="remember" defaultValue="true" />
-            <div className="-space-y-px rounded-md shadow-sm">
+            <div className="space-y-3 rounded-md shadow-sm">
               <div >
-                <label htmlFor="email-address" >
-                  Email address
+                <label htmlFor="email-address" className='text-slate-200'>
+                  Email
                 </label>
                 <input
                   id="email-address"
@@ -57,8 +57,8 @@ export default function Example() {
                 />
               </div>
               <div className='pt-4'>
-                <label htmlFor="password">
-                  Password
+                <label htmlFor="password" className='text-slate-200'>
+                  Hasło
                 </label>
                 <input
                   id="password"
@@ -72,8 +72,8 @@ export default function Example() {
               </div>
 
               <div className='pt-4'>
-                <label htmlFor="password" >
-                  Retype Password
+                <label htmlFor="password" className='text-slate-200'>
+                  Powtórz hasło
                 </label>
                 <input
                   id="password2"
@@ -83,35 +83,6 @@ export default function Example() {
                   required
                   className="relative block w-full rounded-lg border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 
                     placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Hasło"
-                />
-              </div>
-
-              <div className='pt-4'>
-                <label htmlFor="phone">
-                  Telefon
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  required
-                  className="relative block w-full rounded-lg border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 
-                    placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Numer telefonu (000-000-000)"
-                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
-                />
-              </div>
-
-              <div className='pt-4'>
-                <label htmlFor="nick">
-                  Nick
-                </label>
-                <input
-                  id="nick"
-                  name="nick"
-                  type="text"
-                  required
-                  className="relative block w-full rounded-lg border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 
-                    placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Twój nick"
                 />
               </div>
             </div>

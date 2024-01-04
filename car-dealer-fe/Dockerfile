@@ -1,5 +1,5 @@
 FROM node:18-alpine
-WORKDIR /notes-fe
+WORKDIR /car-dealer-fe
 COPY package.json .
 RUN npm install
 COPY . .

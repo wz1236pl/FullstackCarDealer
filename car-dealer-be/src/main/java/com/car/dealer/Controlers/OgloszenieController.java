@@ -10,11 +10,7 @@ import com.car.dealer.Klasy.User.UserRepo;
 import com.car.dealer.Security.JwtService;
 import com.car.dealer.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -42,23 +38,21 @@ public class OgloszenieController {
         }
     }
 
-    @GetMapping("/getCar")
-    public Ogloszenie getCar(long id){
+    @GetMapping("/getCar{id}")
+    public Ogloszenie getCar(@RequestParam Long id){
         return ogloszenieRepo.findById(id).orElse(null);
     }
 
     @PutMapping("/updateCar")
     public void updateCar(Ogloszenie ogloszenie){
-            ogloszenieRepo.save(ogloszenie);
+        var oldCar = ogloszenieRepo.findById(ogloszenie.getId());
+        ogloszenie.setUzytkownik(oldCar.get().getUzytkownik());
+        ogloszenieRepo.save(ogloszenie);
     }
 
-    @DeleteMapping("/deleteCar")
-    public void deleteCar(Long id, HttpServletRequest servletRequest) {
-        final User user = userService.getUserFromJwt(servletRequest);
-        final Ogloszenie ogloszenie = ogloszenieRepo.findById(id).orElse(null);
-        if(Objects.nonNull(user) && user.getId().equals(ogloszenie.getUzytkownik().getId())){
-            ogloszenieRepo.delete(ogloszenie);
-        }
+    @DeleteMapping("/deleteCar{id}")
+    public void deleteCar(@RequestParam Long id) {
+        ogloszenieRepo.deleteById(id);
     }
 
 

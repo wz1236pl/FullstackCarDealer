@@ -1,2 +1,4 @@
-com\car\dealer\DealerApplicationTests.class
+com\car\dealer\Controlers\OgloszenieControllerIT.class
 com\car\dealer\Requests\EditPasswordRequestTest.class
+com\car\dealer\DealerApplicationTests.class
+com\car\dealer\Controlers\OgloszenieControllerTest.class

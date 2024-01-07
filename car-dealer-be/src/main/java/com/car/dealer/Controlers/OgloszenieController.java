@@ -1,29 +1,26 @@
 package com.car.dealer.Controlers;
 
 import java.time.OffsetDateTime;
-import java.util.Objects;
 
 import com.car.dealer.Klasy.Ogloszenie.Ogloszenie;
 import com.car.dealer.Klasy.Ogloszenie.OgloszenieRepo;
 import com.car.dealer.Klasy.User.User;
-import com.car.dealer.Klasy.User.UserRepo;
-import com.car.dealer.Security.JwtService;
 import com.car.dealer.Services.UserService;
+import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.servlet.http.HttpServletRequest;
 
 
+@RequiredArgsConstructor
+@AllArgsConstructor
 @RestController
 public class OgloszenieController {
-    
-    @Autowired
-    UserRepo userRepo;
+
     @Autowired
     OgloszenieRepo ogloszenieRepo;
-    @Autowired
-    JwtService jwtService;
     @Autowired
     UserService userService;
 
